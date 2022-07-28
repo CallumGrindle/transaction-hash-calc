@@ -101,7 +101,8 @@ const executeRelayCall = async ({
 
   console.log("Calculated Transaction Hash", calculatedTransactionHash);
 
-  const transaction = await relayerSigner.sendTransaction(txRequest);
+  // Execute consumer sends signed transaction. No key needed here
+  const transaction = await provider.sendTransaction(ethersSignature);
 
   console.log("Actual Transaction Hash", transaction.hash);
 
