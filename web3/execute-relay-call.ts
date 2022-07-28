@@ -6,6 +6,7 @@ import {
   UP_ADDRESS,
   UP_CONTROLLER_PK,
   RPC_URL,
+  CHAIN_ID,
 } from "../constants";
 
 const web3 = new Web3(RPC_URL);
@@ -79,7 +80,7 @@ const executeRelayCall = async ({
     gasLimit: 100_000,
     gasPrice: 10_000_000_000,
     value: "0",
-    chainId: 2828,
+    chainId: CHAIN_ID,
     data: transactionData,
   };
 

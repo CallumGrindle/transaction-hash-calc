@@ -1,5 +1,5 @@
 import { ethers } from "ethers";
-import { RELAYER_PK as EOA_PK, RPC_URL } from "../constants";
+import { RELAYER_PK as EOA_PK, RPC_URL, CHAIN_ID } from "../constants";
 
 const provider = new ethers.providers.JsonRpcProvider(RPC_URL);
 const signer = new ethers.Wallet(EOA_PK, provider);
@@ -12,7 +12,7 @@ const getTransaction = async () => {
     data: "0x",
     value: ethers.utils.hexlify(ethers.utils.parseEther("1")),
     type: 2,
-    chainId: 2828,
+    chainId: CHAIN_ID,
     nonce: await provider.getTransactionCount(signer.address),
   };
 

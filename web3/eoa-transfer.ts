@@ -1,5 +1,5 @@
 import Web3 from "web3";
-import { RELAYER_PK as EOA_PK, RPC_URL } from "../constants";
+import { RELAYER_PK as EOA_PK, RPC_URL, CHAIN_ID } from "../constants";
 
 const web3 = new Web3(RPC_URL);
 const wallet = web3.eth.accounts.wallet.add(EOA_PK);
@@ -13,7 +13,7 @@ const getTransaction = async () => {
     gasPrice: 10_000_000_000,
     data: "0x",
     value: web3.utils.toWei("1"),
-    chainId: 2828,
+    chainId: CHAIN_ID,
   };
 
   const signature = await wallet.signTransaction(txRequest);

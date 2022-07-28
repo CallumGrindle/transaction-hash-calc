@@ -6,6 +6,7 @@ import {
   UP_ADDRESS,
   UP_CONTROLLER_PK,
   RPC_URL,
+  CHAIN_ID,
 } from "../constants";
 
 const provider = new ethers.providers.JsonRpcProvider(RPC_URL);
@@ -85,7 +86,7 @@ const executeRelayCall = async ({
     gasLimit: 100_000,
     value: ethers.utils.hexlify(0),
     type: 2,
-    chainId: 2828,
+    chainId: CHAIN_ID,
     data: transactionData,
   };
 
